@@ -27,10 +27,7 @@ class Car(Vehicle):
 class Motorcycle(Vehicle):
     def __init__(self, enginetype, hassidecar):
         super().__init__("Motorcycle")
-        if (hassidecar):
-            self.wheels = 2
-        else:
-            self.wheels = 3
+        self.wheels = 2 if hassidecar else 3
         self.doors = 0
         self.engine = enginetype
 

@@ -15,12 +15,10 @@ def is_palindrome(teststr):
     # return False
 
     # more advanced: use the slice trick to reverse the string
-    if teststr == teststr[::-1]:
-        return True
-    return False
+    return teststr == teststr[::-1]
 
 run = True
-while (run):
+while run:
     teststr = input("Enter string to test for palindrome or 'exit':")
 
     # If the user types "exit" then quit the program
@@ -31,10 +29,5 @@ while (run):
     # convert the string to all lower case
     teststr = teststr.lower()
 
-    # strip all the spaces and punctuation from the string
-    newstr = ""
-    for x in teststr:
-        if x.isalnum():
-            newstr += x
-
+    newstr = "".join(x for x in teststr if x.isalnum())
     print("Palindrome test:", is_palindrome(newstr))

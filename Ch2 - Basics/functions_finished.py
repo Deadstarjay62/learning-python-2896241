@@ -19,7 +19,7 @@ def cube(x):
 # function with default value for an argument
 def power(num, x=1):
     result = 1
-    for i in range(x):
+    for _ in range(x):
         result = result * num
     return result
 

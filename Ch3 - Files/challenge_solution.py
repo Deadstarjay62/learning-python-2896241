@@ -21,7 +21,7 @@ os.mkdir("results")
 # create the output file
 resultsfile = open("results/results.txt", "w+")
 if resultsfile.mode == "w+":
-    resultsfile.write("Total bytecount:" + str(totalbytes) + "\n")
+    resultsfile.write(f"Total bytecount:{str(totalbytes)}" + "\n")
     resultsfile.write("Files list:\n")
     resultsfile.write("--------------\n")
     # write the results into the file

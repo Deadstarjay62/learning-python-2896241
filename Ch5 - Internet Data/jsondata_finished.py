@@ -18,7 +18,7 @@ def printResults(data):
 
     # output the number of events, plus the magnitude and each event name
     count = theJSON["metadata"]["count"]
-    print(str(count) + " events recorded")
+    print(f"{str(count)} events recorded")
 
     # for each event, print the place where it occurred
     for i in theJSON["features"]:
@@ -37,8 +37,11 @@ def printResults(data):
         feltReports = i["properties"]["felt"]
         if (feltReports != None):
             if (feltReports > 0):
-                print("%2.1f" % i["properties"]["mag"], i["properties"]
-                      ["place"], " reported " + str(feltReports) + " times")
+                print(
+                    "%2.1f" % i["properties"]["mag"],
+                    i["properties"]["place"],
+                    f" reported {str(feltReports)} times",
+                )
 
 
 def main():
@@ -49,7 +52,7 @@ def main():
 
     # Open the URL and read the data
     webUrl = urllib.request.urlopen(urlData)
-    print("result code: " + str(webUrl.getcode()))
+    print(f"result code: {str(webUrl.getcode())}")
     if (webUrl.getcode() == 200):
         data = webUrl.read().decode("utf-8")
         # print out our customized results

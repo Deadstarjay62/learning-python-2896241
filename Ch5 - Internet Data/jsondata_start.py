@@ -32,7 +32,7 @@ def main():
 
     # Open the URL and read the data
     webUrl = urllib.request.urlopen(urlData)
-    print ("result code: " + str(webUrl.getcode()))
+    print(f"result code: {str(webUrl.getcode())}")
   
 
 if __name__ == "__main__":
